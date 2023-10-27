@@ -9,7 +9,7 @@ public class OdontologoService {
 
     private IDao<Odontologo> odontologoIDao;
 
-    public OdontologoService(IDao<Odontologo> OdontologoIDao){this.odontologoIDao = odontologoIDao;};
+    public OdontologoService(IDao<Odontologo> odontologoIDao){this.odontologoIDao = odontologoIDao;};
 
     public Odontologo registrarOdontologo(Odontologo odontologo){
         return odontologoIDao.registrar(odontologo);

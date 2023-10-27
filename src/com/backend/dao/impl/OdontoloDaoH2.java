@@ -32,14 +32,15 @@ public class OdontoloDaoH2 implements IDao<Odontologo> {
             preparedStatement.setString(3, odontologo.getApellido());
             preparedStatement.execute();
 
+            connection.commit();
+
             ResultSet resultSet = preparedStatement.getGeneratedKeys();
-            odontologoRegistrado = new Odontologo(odontologo.getNumeroMatricula(), odontologo.getNombre(), odontologo.getApellido());
+//            odontologoRegistrado = new Odontologo(odontologo.getNumeroMatricula(), odontologo.getNombre(), odontologo.getApellido());
 
             while (resultSet.next()){
-                odontologoRegistrado.setId(resultSet.getInt("id"));
+                odontologoRegistrado = new Odontologo(odontologo.getNumeroMatricula(), odontologo.getNombre(), odontologo.getApellido());
             }
 
-            connection.commit();
             LOGGER.info("Se ha registrado el domicilio: " + odontologoRegistrado);
 
 
@@ -101,8 +102,6 @@ public class OdontoloDaoH2 implements IDao<Odontologo> {
                 ex.printStackTrace();
             }
         }
-
-
 
         return odontologos;
     }
