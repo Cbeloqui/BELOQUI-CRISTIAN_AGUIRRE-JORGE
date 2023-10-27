@@ -22,3 +22,5 @@ INSERT INTO ODONTOLOGOS (NUMERO_MATRICULA, NOMBRE, APELLIDO) VALUES (?, ?, ?) [4
 [2023-10-26 22:52:06] [ ERROR] [OdontoloDaoH2:60] Table "ODONTOLOGOS" not found (this database is empty); SQL statement:
 INSERT INTO ODONTOLOGOS (NUMERO_MATRICULA, NOMBRE, APELLIDO) VALUES (?, ?, ?) [42104-224]
 [2023-10-26 22:53:16] [ INFO ] [OdontoloDaoH2:49] Se ha registrado el domicilio: - Id: 0- Número de Matricula: 1234 - Nombre: Jorge - Apellido: Alfaro
+[2023-10-26 22:56:37] [ INFO ] [OdontoloDaoH2:49] Se ha registrado el domicilio: - Id: 0- Número de Matricula: 1234 - Nombre: Jorge - Apellido: Alfaro
+[2023-10-26 22:56:37] [ INFO ] [OdontologoDaoMemoria:29] Odontologo guardado: - Id: 1- Número de Matricula: 12374 - Nombre: Cristian - Apellido: Beloqui

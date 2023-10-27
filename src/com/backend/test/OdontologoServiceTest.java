@@ -1,6 +1,7 @@
 package com.backend.test;
 
 import com.backend.dao.impl.OdontoloDaoH2;
+import com.backend.dao.impl.OdontologoDaoMemoria;
 import com.backend.model.Odontologo;
 import com.backend.service.OdontologoService;
 
@@ -47,14 +48,14 @@ public class OdontologoServiceTest {
     }
 
 
-//    @Test
-//    void deberiaAgregarYRetornarIdDeMedicamentoEnMemoria() {
-//        medicamentoService = new MedicamentoService(new MedicamentoDaoMemoria(new ArrayList<>()));
-//        Medicamento medicamentoAPersistir = new Medicamento(35465, "Aspirina", "Bayer", 50, 200);
-//        Medicamento medicamentoPersistido = medicamentoService.registrarMedicamento(medicamentoAPersistir);
-//        assertNotNull(medicamentoPersistido.getId());
-//
-//    }
+    @Test
+    void deberiaAgregarYRetornarIdDeMedicamentoEnMemoria() {
+        odontologoService = new OdontologoService(new OdontologoDaoMemoria(new ArrayList<>()));
+        Odontologo odontologoAPersistir = new Odontologo(12374, "Cristian", "Beloqui");
+        Odontologo odontologoPersistido = odontologoService.registrarOdontologo(odontologoAPersistir);
+        assertNotNull(odontologoPersistido.getId());
+
+    }
 
 
 }
