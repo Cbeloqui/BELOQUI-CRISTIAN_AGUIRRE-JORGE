@@ -13,6 +13,8 @@ public class OdontoloDaoH2 implements IDao<Odontologo> {
 
     private final Logger LOGGER = Logger.getLogger(OdontoloDaoH2.class);
 
+//    String create = "DROP TABLE IF EXISTS ODONTOLOGOS; CREATE TABLE ODONTOLOGOS(ID INT AUTO_INCREMENT PRIMARY KEY, NUMERO_MATRICULA INT NOT NULL, NOMBRE VARCHAR(100) NOT NULL, APELLIDO VARCHAR(100) NOT NULL)";
+//    String create = "DROP TABLE IF EXISTS ANIMALS; CREATE TABLE ANIMALS (ID INT AUTO_INCREMENT PRIMARY KEY, NAME VARCHAR(50) NOT NULL, TYPE VARCHAR(50) NOT NULL)";
 
     @Override
     public Odontologo registrar(Odontologo odontologo) {
@@ -24,6 +26,9 @@ public class OdontoloDaoH2 implements IDao<Odontologo> {
 
             connection = H2Connection.getConnection();
             connection.setAutoCommit(false);
+
+//            Statement statement = connection.createStatement();
+//            statement.execute(create);
 
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO ODONTOLOGOS (NUMERO_MATRICULA, NOMBRE, APELLIDO) " +
                     "VALUES (?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
